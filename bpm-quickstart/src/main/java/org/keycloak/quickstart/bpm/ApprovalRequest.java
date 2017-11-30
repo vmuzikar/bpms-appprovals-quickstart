@@ -5,11 +5,9 @@ public class ApprovalRequest implements java.io.Serializable {
     static final long serialVersionUID = 1L;
 
     private String url;
-    private String description;
 
-    public ApprovalRequest(String url, String description) {
+    public ApprovalRequest(String url) {
         this.url = url;
-        this.description = description;
     }
 
     public String getUrl() {
@@ -21,18 +19,14 @@ public class ApprovalRequest implements java.io.Serializable {
     }
 
     public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
+        return "Some description";
     }
 
     public void approve() {
-
+        System.out.println("Request approved");
     }
 
     public void reject() {
-
+        System.out.println("Request rejected");
     }
 }
