@@ -3,33 +3,12 @@
 <property name="name" value="bpm-quickstart.HandleApprovalRequest-taskform.form"/>
 <property name="displayMode" value="default"/>
 <property name="status" value="0"/>
-<field position="3" name="description" type="InputText" id="1459396552">
-<property name="fieldRequired" value="false"/>
-<property name="label" value="quot;enquot;,quot;description (description)quot;"/>
-<property name="readonly" value="false"/>
-<property name="outputBinding" value="description"/>
-<property name="fieldClass" value="java.lang.String"/>
-</field>
-<field position="1" name="approvalRequest_url" type="InputText" id="351090474">
-<property name="fieldRequired" value="false"/>
-<property name="label" value="quot;enquot;,quot;url (approvalRequest)quot;"/>
-<property name="readonly" value="false"/>
-<property name="outputBinding" value="approvalRequest/url"/>
-<property name="fieldClass" value="java.lang.String"/>
-</field>
 <field position="0" name="approvalKeycloakUrl" type="InputText" id="955741514">
 <property name="fieldRequired" value="false"/>
 <property name="label" value="quot;enquot;,quot;approvalKeycloakUrl (approvalKeycloakUrl)quot;"/>
 <property name="readonly" value="false"/>
 <property name="outputBinding" value="approvalKeycloakUrl"/>
 <property name="fieldClass" value="java.lang.String"/>
-</field>
-<field position="2" name="approved" type="CheckBox" id="447094280">
-<property name="fieldRequired" value="false"/>
-<property name="label" value="quot;enquot;,quot;approved (approved)quot;"/>
-<property name="readonly" value="false"/>
-<property name="outputBinding" value="approved"/>
-<property name="fieldClass" value="java.lang.Boolean"/>
 </field>
 <dataHolder inputId="" name="#E9E371" type="basicType" outId="approvalKeycloakUrl" value="java.lang.String" id="approvalKeycloakUrl"/>
 <dataHolder inputId="" name="#BBBBBB" type="dataModelerEntry" outId="approvalRequest" value="org.keycloak.quickstart.bpm.ApprovalRequest" id="approvalRequest"/>
