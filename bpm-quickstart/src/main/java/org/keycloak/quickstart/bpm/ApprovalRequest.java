@@ -5,9 +5,11 @@ public class ApprovalRequest implements java.io.Serializable {
     static final long serialVersionUID = 1L;
 
     private String url;
+    private String accessToken;
 
-    public ApprovalRequest(String url) {
+    public ApprovalRequest(String url, String accessToken) {
         this.url = url;
+        this.accessToken = accessToken;
     }
 
     public String getUrl() {
@@ -23,10 +25,10 @@ public class ApprovalRequest implements java.io.Serializable {
     }
 
     public void approve() {
-        System.out.println("Request approved");
+        System.out.println("Request approved; token: " + accessToken);
     }
 
     public void reject() {
-        System.out.println("Request rejected");
+        System.out.println("Request rejected; token: " + accessToken);
     }
 }
