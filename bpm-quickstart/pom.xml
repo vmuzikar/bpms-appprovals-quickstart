@@ -7,29 +7,11 @@
   <version>1.0</version>
   <packaging>kjar</packaging>
   <name>bpm-quickstart</name>
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>org.jboss.bom.brms</groupId>
-        <artifactId>jboss-brms-bpmsuite-platform-bom</artifactId>
-        <version>6.4.7.GA-redhat-2</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
   <dependencies>
     <dependency>
       <groupId>org.apache.httpcomponents</groupId>
       <artifactId>httpclient</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.kie.server</groupId>
-      <artifactId>kie-server-client</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.kie.server</groupId>
-      <artifactId>kie-server-api</artifactId>
+      <version>4.5.2.redhat-1</version>
     </dependency>
   </dependencies>
   <repositories>
