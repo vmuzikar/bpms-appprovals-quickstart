@@ -29,6 +29,7 @@ public class ApprovalRequest implements java.io.Serializable {
     }
 
     public void reject() {
+
         System.out.println("Request rejected; token: " + accessToken);
     }
 }
