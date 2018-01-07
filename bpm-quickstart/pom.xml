@@ -7,22 +7,21 @@
   <version>1.0</version>
   <packaging>kjar</packaging>
   <name>bpm-quickstart</name>
-  <!--<dependencyManagement>-->
-    <!--<dependencies>-->
-      <!--<dependency>-->
-        <!--<groupId>org.jboss.bom.brms</groupId>-->
-        <!--<artifactId>jboss-brms-bpmsuite-platform-bom</artifactId>-->
-        <!--<version>6.4.2.GA-redhat-2</version>-->
-        <!--<type>pom</type>-->
-        <!--<scope>import</scope>-->
-      <!--</dependency>-->
-    <!--</dependencies>-->
-  <!--</dependencyManagement>-->
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.jboss.bom.brms</groupId>
+        <artifactId>jboss-brms-bpmsuite-platform-bom</artifactId>
+        <version>6.4.7.GA-redhat-2</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
   <dependencies>
     <dependency>
       <groupId>org.apache.httpcomponents</groupId>
       <artifactId>httpclient</artifactId>
-      <version>4.5.0.redhat-1</version>
     </dependency>
   </dependencies>
   <repositories>
@@ -30,6 +29,11 @@
       <id>guvnor-m2-repo</id>
       <name>Guvnor M2 Repo</name>
       <url>http://localhost:8080/business-central/maven2/</url>
+    </repository>
+    <repository>
+      <id>jboss-mw-repo</id>
+      <name>JBoss Middleware Repository</name>
+      <url>https://maven.repository.redhat.com/ga</url>
     </repository>
   </repositories>
   <build>
