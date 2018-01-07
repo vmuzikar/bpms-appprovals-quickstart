@@ -24,5 +24,13 @@
         <source>LOCAL</source>
       </metadata>
     </repository>
+    <repository>
+      <include>true</include>
+      <metadata>
+        <id>jboss-mw-repo</id>
+        <url>https://maven.repository.redhat.com/ga</url>
+        <source>PROJECT</source>
+      </metadata>
+    </repository>
   </repositories>
 </project-repositories>
