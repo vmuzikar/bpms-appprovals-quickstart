@@ -56,10 +56,6 @@ public class ApprovalRequest implements java.io.Serializable {
         executeRequest(request);
     }
 
-    private HttpClient getHttpClient() {
-
-    }
-
     private void executeRequest(HttpUriRequest request) throws IOException {
         List<Header> headers = new ArrayList<Header>();
         headers.add(new BasicHeader(HttpHeaders.CONTENT_TYPE, "application/json"));
