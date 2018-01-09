@@ -68,7 +68,7 @@ public class ApprovalRequest implements java.io.Serializable {
         HttpResponse response = httpClient.execute(request);
 
         if (response.getStatusLine().getStatusCode() >= 300) {
-            throw new RuntimeException("Failed to send request to Keycloak; Status: " + response.getStatusLine());
+            throw new RuntimeException("Failed to send request to Keycloak; Status: " + response.getStatusLine() + "; Request: " + request);
         }
     }
 
