@@ -2,6 +2,7 @@ package org.keycloak.quickstart.bpm;
 
 import org.apache.http.Header;
 import org.apache.http.HttpHeaders;
+import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.client.methods.RequestBuilder;
@@ -47,22 +48,32 @@ public class ApprovalRequest implements java.io.Serializable {
 
     public void approve() throws IOException {
         HttpUriRequest request = RequestBuilder.post(getApprovalUrl()).build();
-        getHttpClient().execute(request);
+        executeRequest(request);
     }
 
     public void reject() throws IOException {
         HttpUriRequest request = RequestBuilder.delete(getApprovalUrl()).build();
-        getHttpClient().execute(request);
+        executeRequest(request);
     }
 
     private HttpClient getHttpClient() {
+
+    }
+
+    private void executeRequest(HttpUriRequest request) throws IOException {
         List<Header> headers = new ArrayList<Header>();
         headers.add(new BasicHeader(HttpHeaders.CONTENT_TYPE, "application/json"));
         headers.add(new BasicHeader(HttpHeaders.AUTHORIZATION, "Bearer " + accessToken));
 
-        return HttpClientBuilder.create()
+        HttpClient httpClient = HttpClientBuilder.create()
                 .setDefaultHeaders(headers)
                 .build();
+
+        HttpResponse response = httpClient.execute(request);
+
+        if (response.getStatusLine().getStatusCode() >= 300) {
+            throw new RuntimeException("Failed to send request to Keycloak; Status: " + response.getStatusLine());
+        }
     }
 
     private URI getApprovalUrl() {
