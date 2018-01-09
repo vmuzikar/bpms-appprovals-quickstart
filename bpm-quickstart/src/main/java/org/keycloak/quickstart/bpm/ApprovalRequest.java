@@ -73,6 +73,6 @@ public class ApprovalRequest implements java.io.Serializable {
     }
 
     private URI getApprovalUrl() {
-        return URI.create(String.format("%s/admin/%s/approvals/%s", keycloakRootUrl, realm, approvalId));
+        return URI.create(String.format("%s/admin/realms/%s/approvals/%s", keycloakRootUrl, realm, approvalId));
     }
 }
