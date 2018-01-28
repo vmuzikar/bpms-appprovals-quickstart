@@ -8,6 +8,7 @@ import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.client.methods.RequestBuilder;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.message.BasicHeader;
+import org.keycloak.representations.idm.ApprovalRequestRepresentation;
 
 import java.io.IOException;
 import java.net.URI;
@@ -19,14 +20,13 @@ public class ApprovalRequest implements java.io.Serializable {
     static final long serialVersionUID = 1L;
 
     private String keycloakRootUrl;
+    private ApprovalRequestRepresentation requestRep;
     private String realm;
-    private String approvalId;
     private String accessToken;
 
-    public ApprovalRequest(String keycloakRootUrl, String realm, String approvalId, String accessToken) {
+    public ApprovalRequest(String keycloakRootUrl, ApprovalRequestRepresentation requestRep, String realm, String accessToken) {
         this.keycloakRootUrl = keycloakRootUrl;
-        this.realm = realm;
-        this.approvalId = approvalId;
+        this.requestRep = requestRep;
         this.accessToken = accessToken;
     }
 
@@ -39,7 +39,7 @@ public class ApprovalRequest implements java.io.Serializable {
     }
 
     public String getApprovalId() {
-        return approvalId;
+        return requestRep.getId();
     }
 
     public String getAccessToken() {
@@ -73,6 +73,6 @@ public class ApprovalRequest implements java.io.Serializable {
     }
 
     private URI getApprovalUrl() {
-        return URI.create(String.format("%s/admin/realms/%s/approvals/%s", keycloakRootUrl, realm, approvalId));
+        return URI.create(String.format("%s/admin/realms/%s/approvals/%s", keycloakRootUrl, realm, requestRep.getId()));
     }
 }
