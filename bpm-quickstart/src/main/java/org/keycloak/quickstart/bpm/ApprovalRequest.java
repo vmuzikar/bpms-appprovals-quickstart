@@ -27,6 +27,7 @@ public class ApprovalRequest implements java.io.Serializable {
     public ApprovalRequest(String keycloakRootUrl, ApprovalRequestRepresentation requestRep, String realm, String accessToken) {
         this.keycloakRootUrl = keycloakRootUrl;
         this.requestRep = requestRep;
+        this.realm = realm;
         this.accessToken = accessToken;
     }
 
