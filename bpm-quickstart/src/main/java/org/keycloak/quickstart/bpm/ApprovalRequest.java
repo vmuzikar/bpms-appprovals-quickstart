@@ -44,12 +44,12 @@ public class ApprovalRequest implements java.io.Serializable {
     }
 
     public void approve() throws IOException {
-        HttpUriRequest request = RequestBuilder.post(getApprovalUrl()).build();
+        HttpUriRequest request = RequestBuilder.post().setUri(getApprovalUrl()).build();
         executeRequest(request);
     }
 
     public void reject() throws IOException {
-        HttpUriRequest request = RequestBuilder.delete(getApprovalUrl()).build();
+        HttpUriRequest request = RequestBuilder.delete().setUri(getApprovalUrl()).build();
         executeRequest(request);
     }
 
